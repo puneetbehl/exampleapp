@@ -1,0 +1,3 @@
+include "myplugin"
+
+project(":myplugin").projectDir = new File(settingsDir, "plugins/myplugin")
