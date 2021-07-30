@@ -1,12 +1,13 @@
 buildscript {
     repositories {
+        mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate5:7.0.5"
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.0"
-        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.2.4"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.3.3-SNAPSHOT"
     }
 }
 
@@ -22,6 +23,7 @@ apply plugin:"com.bertramlabs.asset-pipeline"
 apply plugin:"org.grails.grails-gsp"
 
 repositories {
+    mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
 }
 
@@ -61,7 +63,7 @@ dependencies {
     runtime "com.h2database:h2"
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.1"
-    runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.2.4"
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.3.3-SNAPSHOT"
     testCompile "io.micronaut:micronaut-inject-groovy"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.mockito:mockito-core"
@@ -108,10 +110,16 @@ tasks.withType(Test) {
 assets {
     minifyJs = true
     minifyCss = true
+    minifyOptions = [
+        warningLevel: [
+            duplicate: "WARNING",
+            checkVars: "WARNING"
+        ]
+    ]
 }
 
 grails {
     plugins {
-        compile project(":myplugin")
+        compile project(":plugin1")
     }
 }

@@ -9,3 +9,8 @@
 //= require bootstrap
 //= require popper.min
 //= require_self
+var _actionCount= 0;
+var _Action =  {
+    LEFT: _actionCount++,
+    LEFT: _actionCount++
+};

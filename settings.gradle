@@ -1,4 +1,12 @@
 include "myapp"
-include "myplugin"
+include "plugin1"
+include "plugin2"
+include "plugin3"
+include "plugin4"
+include "plugin5"
 
-project(":myplugin").projectDir = new File(settingsDir, "plugins/myplugin")
+project(":plugin1").projectDir = new File(settingsDir, "plugins/plugin1")
+project(":plugin2").projectDir = new File(settingsDir, "plugins/plugin2")
+project(":plugin3").projectDir = new File(settingsDir, "plugins/plugin3")
+project(":plugin4").projectDir = new File(settingsDir, "plugins/plugin4")
+project(":plugin5").projectDir = new File(settingsDir, "plugins/plugin5")

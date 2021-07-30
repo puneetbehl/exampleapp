@@ -4,6 +4,7 @@
     <meta name="layout" content="main"/>
     <title>Welcome to Grails</title>
     <asset:stylesheet src="plugin.css"/>
+    <asset:stylesheet src="plugin5.css"/>
 </head>
 <body>
 <content tag="nav">
